@@ -13,7 +13,7 @@ class Eagle:
 
     def __init__(self):
         self.y_distance = 0     # высота полета.
-        self.squeal = 'I train, eat, sleep, and repeat'     # звук, который издаёт орел.
+        self.sound = 'I train, eat, sleep, and repeat'     # звук, который издаёт орел.
 
     def fly(self, dy):
         self.y_distance += dy  # изменение дистанции
@@ -27,15 +27,14 @@ class Pegasus(Horse, Eagle):
     def move(self, dx, dy):     # изменения дистанции
         self.x_distance += dx
         self.y_distance += dy
-        return self.run(self.x_distance)
-        return self.fly(self.y_distance)
+        return self.run(self.x_distance), self.fly(self.y_distance)
 
     def get_pos(self):                  #полученная позиция
         return self.x_distance, self.y_distance
 
     def voice(self):            #голос
         print(self.sound)
-        print(self.squeal)
+
 
 
 p1 = Pegasus()
@@ -47,3 +46,4 @@ p1.move(-5, 20)
 print(p1.get_pos())
 p1.voice()
 
+print(Pegasus.mro())
