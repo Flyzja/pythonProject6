@@ -9,6 +9,7 @@ class Horse():
         self.x_distance += dx        # изменение дистанции
         return self.x_distance               # self.x_distance
 
+
 class Eagle:
 
     def __init__(self):
@@ -19,6 +20,7 @@ class Eagle:
         self.y_distance += dy  # изменение дистанции
         return self.y_distance  # self.x_distance
 
+
 class Pegasus(Horse, Eagle):
 
     def __init__(self):
@@ -27,7 +29,8 @@ class Pegasus(Horse, Eagle):
     def move(self, dx, dy):     # изменения дистанции
         self.x_distance += dx
         self.y_distance += dy
-        return self.run(self.x_distance), self.fly(self.y_distance)
+        return (self.run(self.x_distance),
+        self.fly(self.y_distance))
 
     def get_pos(self):                  #полученная позиция
         return self.x_distance, self.y_distance
